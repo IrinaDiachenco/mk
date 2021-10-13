@@ -18,32 +18,29 @@ const player2 = {
     }
 }
 
-// function createPlayer() {
-    const $player1 = document.createElement('div');
-    // $player1.innerText = 'Scorpion';
+function createPlayer(player1, name, life) {
+    let $player1 = document.createElement('div');
     $player1.classList.add('player1');
-    const $root = document.querySelector('.root');
-    $root.appendChild($player1);
-    const $progressbar = document.createElement('div');
+    // const $root = document.querySelector('.root');
+    let $arenas = document.querySelector('.arenas');
+    $arenas.appendChild($player1);
+    let $progressbar = document.createElement('div');
     $player1.appendChild($progressbar);
     $progressbar.classList.add('progressbar');
-    const $life = document.createElement('div');
+    let $life = document.createElement('div');
     $progressbar.appendChild($life);
     $life.classList.add('life');
     $life.style.width = '100%'
-    const $name = document.createElement('div');
+    let $name = document.createElement('div');
     $progressbar.appendChild($name);
     $name.classList.add('name');
     $name.innerText = 'SCORPION';
-
-    const $character = document.createElement('div');
+    let $character = document.createElement('div');
     $player1.appendChild($character);
     $character.classList.add('character');
-    const $img = document.createElement('img');
+    let $img = document.createElement('img');
     $img.src = 'http://reactmarathon-api.herokuapp.com/assets/scorpion.gif'
-    $character.appendChild($img);
-    
-
-// }
-
-// console.log(createPlayer())
+    $character.appendChild($img)
+}
+createPlayer('player1', 'SCORPION', 50);
+createPlayer('player2', 'KITANA', 80);
