@@ -20,12 +20,15 @@ const player2 = {
 }
 
 
+
 let $arenas = document.querySelector('.arenas');
+
 
 function createPlayer(player, {name, hp, img}) {
     let $player1 = document.createElement('div');
     $player1.classList.add(player);
     // const $root = document.querySelector('.root');
+
     $arenas.appendChild($player1);
     let $progressbar = document.createElement('div');
     $player1.appendChild($progressbar);
