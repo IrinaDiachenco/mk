@@ -60,8 +60,16 @@ function changeHP(player) {
     player.hp -= 20;
     $playerLife.style.width = player.hp + '%';
 
-    if (player.hp < 0) {
+    // if (player.hp < 0) {
+        
+    //     $arenas.appendChild(playerLose(player.name));
+        
+    // }
+
+        if (player.hp <= 0) {
+        
         $arenas.appendChild(playerLose(player.name));
+        $playerLife.style.width = 0 + '%';
     }
 }
 
