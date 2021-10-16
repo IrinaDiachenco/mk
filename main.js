@@ -60,24 +60,16 @@ function changeHP(player) {
     player.hp -= Math.ceil(Math.random() * 20);
     $playerLife.style.width = player.hp + '%';
 console.log(player)
-    // if (player.hp < 0) {
-        
-    //     $arenas.appendChild(playerLose(player.name));
-        
-    // }
 
-        if (player.hp < 0) {
-        
-        // $arenas.appendChild(playerLose(player.name));
+        if (player.hp <= 0) {
+
         $playerLife.style.width = 0 + '%';
     } else if (player1.hp <= 0) {
         
         $arenas.appendChild(playerWins(player2.name));
-        // $playerLife.style.width = 0 + '%';
     } else if (player2.hp <= 0) {
 
         $arenas.appendChild(playerWins(player1.name));
-        // $playerLife.style.width = 0 + '%';
     }
 }
 
