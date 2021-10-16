@@ -66,10 +66,18 @@ console.log(player)
         
     // }
 
-        if (player.hp <= 0) {
+        if (player.hp < 0) {
         
-        $arenas.appendChild(playerLose(player.name));
+        // $arenas.appendChild(playerLose(player.name));
         $playerLife.style.width = 0 + '%';
+    } else if (player1.hp <= 0) {
+        
+        $arenas.appendChild(playerWins(player2.name));
+        // $playerLife.style.width = 0 + '%';
+    } else if (player2.hp <= 0) {
+
+        $arenas.appendChild(playerWins(player1.name));
+        // $playerLife.style.width = 0 + '%';
     }
 }
 
@@ -78,6 +86,13 @@ function playerLose(name) {
     $loseTitle.innerText = `${name} lose`;
 
     return $loseTitle;
+}
+
+function playerWins(name) {
+    const $winsTitle = createElement('div', 'winsTitle');
+    $winsTitle.innerText = `${name} wins`;
+
+    return $winsTitle;
 }
 
 $randomButton.addEventListener('click', function() {
